@@ -1,0 +1,114 @@
+- name: Setting up Master Node with K3S / grader account / ssh keys
+  hosts: master_node
+  tasks:
+   - name: Ping my hosts
+     ansible.builtin.ping:
+   - name: create grader user
+     become: true
+     become_user: root
+     user:
+      name: grader
+      password: "{{ 'grader' | password_hash('sha512') }}"
+      createhome: yes
+      shell: /bin/bash
+   - name: Say hello
+     ansible.builtin.debug:
+       msg: Hello master grader !!!!!!!!
+
+   - name: Write ssh pub key to authorized_keys
+     become: true
+     become_user: root
+     ansible.posix.authorized_key:
+       user: grader
+       state: present
+       key: "{{ lookup('file', '/home/liamsmith/.ssh/authorized_keys') }}"
+
+   - name: Install updates
+     become: true
+     become_user: root
+     apt: 
+       #upgrade: yes
+       update_cache: yes
+
+   - name: Set up Master node for cluster
+     become: true
+     become_user: root
+     shell: "curl -sfL https://get.k3s.io | INSTALL_K3S_EXEC='--flannel-backend vxlan --token 12345' sh -s -"
+
+   - name: Fetch k3s.yaml from master
+     become: true
+     become_user: root
+     fetch:
+       src: /etc/rancher/k3s/k3s.yaml
+       fail_on_missing: true
+       dest: /home/liamsmith/final
+
+   - name: Install NFS tools
+     become: true
+     become_user: root
+     apt:
+       name: nfs-common
+       state: present
+
+
+
+- name: Setting up worker nodes with grader account / ssh keys
+  hosts: worker_nodes
+  tasks:
+   - name: Ping my hosts
+     ansible.builtin.ping:
+   - name: create grader user
+     become: true
+     become_user: root
+     user:
+      name: grader
+      password: "{{ 'grader' | password_hash('sha512') }}"
+      createhome: yes
+      shell: /bin/bash
+   - name: Say hello
+     ansible.builtin.debug:
+       msg: Hello grader !!!!!!!!
+
+   - name: Write ssh pub key to authorized_keys
+     become: true
+     become_user: root
+     ansible.posix.authorized_key:
+       user: grader
+       state: present
+       key: "{{ lookup('file', '/home/liamsmith/.ssh/authorized_keys') }}"
+
+   - name: Install updates
+     become: true
+     become_user: root
+     apt: 
+       #upgrade: yes
+       update_cache: yes
+
+   - name: Set up worker nodes for cluster
+     become: true
+     become_user: root
+     shell: "curl -sfL https://get.k3s.io | K3S_URL=https://192.168.213.134:6443 K3S_TOKEN='K103cc9fa6578716d8dca772cb1f5b055ac43de5d0f4f457ca92a857818e1424200::server:12345' sh -"
+
+   - name: create file / directory of ~/.kube/config.yaml
+     file:
+       path: /home/remote/.kube
+       state: directory
+     copy:
+       src: /home/liamsmith/final/k3s.yaml
+       dest: /home/remote/.kube/config.yaml
+   
+   - name: reload daemon and restart k3s-agent.service
+     become: true
+     become_user: root
+     systemd:
+       daemon-reload: true
+     systemd:
+
+   - name: Install NFS tools
+     become: true
+     become_user: root
+     apt:
+       name: nfs-common
+       state: present
+
+

@@ -1,0 +1,62 @@
+SERVER_NAME: final-3
+USER: remote
+PASSWORD: remote
+SWITCH TO ROOT: sudo su -
+
+
+
+
+remote@final-3:~$ history
+
+    1  exit
+    2  cd .ssh/
+    3  vi authorized_keys
+    4  exit
+    5  cd .ssh/
+    6  ls
+    7  vim authorized_keys
+    8  ip a
+    9  su -
+   10  df -k
+   11  sudo lvextend -l +100%FREE /dev/ubuntu-vg/ubuntu-lv
+   12  df -k
+   13  resize2fs /dev/mapper/ubuntu--vg-ubuntu--lv
+   14  sudo resize2fs /dev/mapper/ubuntu--vg-ubuntu--lv
+   15  df -k
+   16  sudo curl -sfL https://get.k3s.io | K3S_URL=https://192.168.213.129:6443 INSTALL_K3S_EXEC="--flannel-backend vxlan"  K3S_TOKEN="K103cc9fa6578716d8dca772cb1f5b055ac43de5d0f4f457ca92a857818e1424200::server:12345" sh -
+   17  sudo journalctl -xeu k3s-agent.service
+   18  sudo curl -sfL https://get.k3s.io | K3S_URL=https://192.168.213.129:6443 INSTALL_K3S_EXEC="--flannel-backend=vxlan"  K3S_TOKEN="K103cc9fa6578716d8dca772cb1f5b055ac43de5d0f4f457ca92a857818e1424200::server:12345" sh -
+   19  sudo curl -sfL https://get.k3s.io | K3S_URL=https://192.168.213.129:6443 K3S_TOKEN="K103cc9fa6578716d8dca772cb1f5b055ac43de5d0f4f457ca92a857818e1424200::server:12345" sh -
+   20  sudo apt update
+   21  sudo systemctl status k3s-agent.service
+   22  sudo reboot -h now
+   23  sudo systemctl status k3s-agent.service
+   24  su -
+   25  sudo kubectl logs
+   26  sudo kubectl logs pod
+   27  sudo vim /etc/systemd/system/k3s-agent.service
+   28  exit
+   29  sudo su -
+   30  clear
+   31  history
+
+
+
+
+
+
+
+
+
+root@final-3:~# history
+
+    1  cd /var/lib/rancher/
+    2  ls
+    3  cd k3s/agent/
+    4  cd etc/flannel/
+    5  clear
+    6  cat net-conf.json
+    7  sudo systemctl stop k3s-agent.service
+    8  /usr/local/bin/k3s-agent-uninstall.sh
+    9  clear
+   10  history

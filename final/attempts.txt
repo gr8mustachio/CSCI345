@@ -1,0 +1,13 @@
+POD_CIDR=10.44.0.0/16
+SERVICE_CIDR=10.45.0.0/16
+sudo curl -sfL https://get.k3s.io | INSTALL_K3S_EXEC=“—-cluster-cidr $POD_CIDR --service-cidr $SERVICE_CIDR --flannel-backend vxlan --token 12345" sh -s -
+
+agent
+
+sudo curl -sfL https://get.k3s.io | K3S_URL=https://192.168.213.134:6443 K3S_TOKEN="K1059c7aefe229a5c80e15c2801cea9a4b9aa0724834dec5f9fdbd3d32ae9066fc3::server:12345" sh -
+
+
+/etc/rancher/k3s/config.yaml
+token: "secret"
+debug: true
+flannel-cni-conf: "/var/lib/rancher/k3s/agent/etc/cni/net.d/10-flannel.conflist"

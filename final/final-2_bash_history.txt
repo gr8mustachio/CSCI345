@@ -1,0 +1,193 @@
+SERVER_NAME: final-2
+USER: remote
+PASSWORD: remote
+SWITCH TO ROOT: sudo su -
+
+
+
+
+remote@final-2:~$ history
+
+    1  vim .ssh/authorized_keys
+    2  exit
+    3  ls -a
+    4  ip -a
+    5  ifconfig
+    6  sudo apt install net-tools
+    7  ip a
+    8  sudo curl -sfL https://get.k3s.io | K3S_URL=https://192.168.213.129:6443 K3S_TOKEN="K103cc9fa6578716d8dca772cb1f5b055ac43de5d0f4f457ca92a857818e1424200::server:12345" sh -
+    9  sudo apt update
+   10  sudo systemctl status k3s-agent.service
+   11  sudo reboot -h now
+   12  clear
+   13  sudo kubectl describe node
+   14  curl localhost:8080
+   15  sudo ufw status
+   16  sudo kubectl config view
+   17  ls /etc/rancher/
+   18  cd /etc/rancher/node/
+   19  ls
+   20  ls ~ -a
+   21  cd ~
+   22  mkdir .kube/
+   23  ls
+   24  ls -a
+   25  cd .kube/
+   26  vim config
+   27  sudo systemctl restart k3s-agent.service
+   28  sudo systemctl status k3s-agent.service
+   29  sudo reboot -h now
+   30  sudo systemctl status k3s-agent.service
+   31  ls -a
+   32  sudo kubectl get nodes
+   33  curl localhost:9090
+   34  cat .kube/config
+   35  mv .kube/config .kube/config.yaml
+   36  sudo systemctl restart k3s-agent.service
+   37  sudo systemctl status k3s-agent.service
+   38  cat .kube/config.yaml
+   39  curl localhost:22
+   40  curl localhost:2222
+   41  sudo systemctl reload k3s-agent.service
+   42  sudo systemctl daemon-reload
+   43  sudo systemctl restart k3s-agent.service
+   44  sudo systemctl status k3s-agent.service
+   45  sudo systemctl status k3s-agent.service
+   46  sudo systemctl daemon-reload
+   47  vim /etc/systemd/system/k3s-agent.service
+   48  sudo vim /etc/systemd/system/k3s-agent.service
+   49  sudo systemctl daemon-reload
+   50  sudo systemctl restart k3s-agent.service
+   51  systemctl status k3
+   52  systemctl status k3s-agent.service
+   53  clear
+   54  sudo vim /etc/systemd/system/k3s-agent.service
+   55  sudo systemctl daemon-reload
+   56  sudo systemctl restart k3s-agent.service
+   57  systemctl status k3s-agent.service
+   58  sudo vim /etc/systemd/system/k3s-agent.service
+   59  sudo systemctl daemon-reload
+   60  systemctl status k3s-agent.service
+   61  sudo systemctl restart k3s-agent.service
+   62  systemctl status k3s-agent.service
+   63  sudo systemctl status k3s-agent.service
+   64  sudo systemctl daemon-reload
+   65  sudo systemctl restart k3s-agent.service
+   66  sudo systemctl status k3s-agent.service
+   67  sudo kubectl get nodes
+   68  sudo kubectl get pods -A
+   69  cat .kube/config.yaml
+   70  sudo vim /etc/systemd/system/k3s-agent.service
+   71  sudo systemctl daemon-reload
+   72  sudo systemctl restart k3s-agent.service
+   73  sudo systemctl status k3s-agent.service
+   74  cd /var/log
+   75  ls
+   76  cd containers/
+   77  ls
+   78  tail kube-flannel-ds-ltrk5_kube-flannel_install-cni-2d206934e76acfe1af19fc2ec2b89d347a518e274f9a84d438315d56290d0945.log
+   79  sudo tail kube-flannel-ds-ltrk5_kube-flannel_install-cni-2d206934e76acfe1af19fc2ec2b89d347a518e274f9a84d438315d56290d0945.log
+   80  ls -l
+   81  cd ../pods/
+   82  ls
+   83  clear
+   84  ls -l
+   85  cd kube-flannel_kube-flannel-ds-ltrk5_e3a18c16-f0e3-4b53-b5ca-7bda77cf41d7/
+   86  ls
+   87  ls *
+   88  cd kube-flannel/
+   89  ls
+   90  ls -l
+   91  sudo cat 91.log
+   92  ls
+   93  sudo cat 92.log
+   94  cd /var/lib/rancher//k3s/agent/etc/flannel
+   95  cd /var/lib/rancher/k3s/agent/etc/flannel
+   96  sudo cd /var/lib/rancher/k3s/agent/etc/flannel
+   97  cd /var/lib/rancher/k3s/agent/
+   98  sudo cd /var/lib/rancher/k3s/agent/
+   99  su -
+  100  sudo su -
+  101  cd ~
+  102  history | grep curl
+  103  sudo curl -sfL https://get.k3s.io | K3S_URL=https://192.168.213.134:6443 K3S_TOKEN="K1059c7aefe229a5c80e15c2801cea9a4b9aa0724834dec5f9fdbd3d32ae9066fc3::server:12345" sh -
+  104  sudo systemctl status k3s-agent.service
+  105  history
+  106  cd /etc/rancher/
+  107  ls
+  108  cd node
+  109  ls
+  110  sudo cat password
+  111  cd ~
+  112  ls -a
+  113  rm -r .kube/
+  114  /usr/local/bin/k3s-agent-uninstall.sh
+  115  sudo curl -sfL https://get.k3s.io | K3S_URL=https://192.168.213.134:6443 K3S_TOKEN="K1059c7aefe229a5c80e15c2801cea9a4b9aa0724834dec5f9fdbd3d32ae9066fc3::server:12345" sh -
+  116  sudo systemctl status k3s-agent.service
+  117  su -
+  118  sudo su -
+  119  clear
+  120  history
+
+
+
+
+
+
+
+
+
+root@final-2:~# history
+
+    1  cd /var/lib/rancher/k3s/agent/
+    2  ls
+    3  cd etc/
+    4  ls
+    5  cd flannel/
+    6  ls
+    7  clear
+    8  cat net-conf.json
+    9  vim net-conf.json
+   10  cp net-conf.json net-conf-copy.json .
+   11  cp net-conf.json net-conf-copy.json .bck
+   12  cp net-conf.json net-conf.json.bck
+   13  ls
+   14  vi net-conf.json
+   15  systemctl daemon-reload
+   16  sudo systemctl restart k3s-agent.service
+   17  systemctl status k3s-agent.service
+   18  history
+   19  cd /var/log
+   20  ls
+   21  cd pods/
+   22  ls
+   23  cd kube-flannel_kube-flannel-ds-ltrk5_e3a18c16-f0e3-4b53-b5ca-7bda77cf41d7/
+   24  ls
+   25  cd kube-flannel/
+   26  ls
+   27  cat 97.log
+   28  history
+   29  cd /var/lib/rancher/k3s/agent/
+   30  ;s
+   31  ls
+   32  cd etc/
+   33  ls
+   34  cd flannel/
+   35  ls
+   36  cat net-conf.json
+   37  rm net-conf.json.bck
+   38  sudo systemctl stop k3s-agent.service
+   39  /usr/local/bin/k3s-agent-uninstall.sh
+   40  exit
+   41  ls -a
+   42  ls -la
+   43  ls /home/remote/
+   44  ls -la /home/remote/
+   45  grep 129 /home/remote*
+   46  grep 129 /home/remote/*
+   47  grep 129 /home/remote/.*
+   48  cat /etc/hosts
+   49  systemctl stop k3s-agent.service
+   50  /usr/local/bin/k3s-agent-uninstall.sh
+   51  rm -rf /etc/rancher/
+   52  history

@@ -1,0 +1,95 @@
+SERVER_NAME: final-1
+USER: remote
+PASSWORD: remote
+SWITCH TO ROOT: sudo su -
+
+
+
+
+remote@final-1:~$ history
+
+    1  vim .ssh/authorized_keys
+    2  exit
+    3  vim .ssh/authorized_keys
+    4  ip a
+    5  vim .ssh/authorized_keys
+    6  sudo curl -sfL https://get.k3s.io | INSTALL_K3S_EXEC=“—-cluster-cidr 10.44.0.0/16 --service-cidr 10.45.0.0/16 --flannel-backend vxlan --token 12345" sh -s -
+    7  history
+    8  sudo curl -sfL https://get.k3s.io | INSTALL_K3S_EXEC=“—-cluster-cidr 10.44.0.0/16 --service-cidr 10.45.0.0/16 --flannel-backend vxlan --token 12345" sh -s -
+    9  sudo curl -sfL https://get.k3s.io | INSTALL_K3S_EXEC=“—-cluster-cidr 10.44.0.0/16 --service-cidr 10.45.0.0/16 --flannel-backend vxlan --token 12345" sh -s -
+   10  clear
+   11  POD_CIDR=10.44.0.0/16
+   12  SERVICE_CIDR=10.45.0.0/16
+   13  sudo curl -sfL https://get.k3s.io | INSTALL_K3S_EXEC=“—-cluster-cidr $POD_CIDR --service-cidr $SERVICE_CIDR --flannel-backend vxlan --token 12345" sh -s -
+   14  sudo curl -sfL https://get.k3s.io | INSTALL_K3S_EXEC="--cluster-cidr $POD_CIDR --service-cidr $SERVICE_CIDR --flannel-backend vxlan --token 12345" sh -s -
+   15  sudo systemctl status k3s.service
+   16  cd /var/log
+   17  ls
+   18  cd pods
+   19  cd ..
+   20  tail syslog
+   21  sudo vim /etc/systemd/system/k3s.service
+   22  sudo systemctl daemon-reload
+   23  cat syslog
+   24  cd /etc/rancher/k3s/
+   25  ls
+   26  sudo vim config.yaml
+   27  sudo systemctl daemon-reload
+   28  sudo systemctl restart k3s.service
+   29  sudo systemctl status k3s.service
+   30  sudo cat /var/lib/rancher/k3s/server/node-token
+   31  ip a
+   32  sudo cat /etc/rancher/k3s/config.yaml
+   33  history
+   34  clear
+   35  kubectl get nodes
+   36  sudo kubectl get nodes
+   37  sudo cp /etc/rancher/k3s/config.yaml ~
+   38  cat config.yaml
+   39  /usr/local/bin/k3s-uninstall.sh
+   40  exit
+   41  sudo curl -sfL https://get.k3s.io | INSTALL_K3S_EXEC=“—-cluster-cidr $POD_CIDR --service-cidr $SERVICE_CIDR --flannel-backend vxlan --token 12345" sh -s -
+   42  env
+   43  POD_CIDR=10.44.0.0/16
+   44  SERVICE_CIDR=10.45.0.0/16
+   45  sudo curl -sfL https://get.k3s.io | INSTALL_K3S_EXEC=“—-cluster-cidr $POD_CIDR --service-cidr $SERVICE_CIDR --flannel-backend vxlan --token 12345" sh -s -
+   46  sudo curl -sfL https://get.k3s.io | INSTALL_K3S_EXEV="--cluster-cidr $POD_CIDR --service-cidr $SERVICE_CIDR --flannel-backend vxlan --token 12345" sh -s -
+   47  journalctl -xeu k3s.service
+   48  sudo vim /etc/rancher/k3s/config.yaml
+   49  rm -r /etc/rancher/
+   50  /usr/local/bin/k3s-uninstall.sh
+   51  cd /etc/rancher/
+   52  ls
+   53  cd ..
+   54  rm -rf /etc/rancher/
+   55  sudo rm -rf /etc/rancher/
+   56  history
+   57  sudo curl -sfL https://get.k3s.io | INSTALL_K3S_EXEV="--cluster-cidr $POD_CIDR --service-cidr $SERVICE_CIDR --flannel-backend vxlan --token 12345" sh -s -
+   58  cat /var/lib/rancher/
+   59  ls /var/lib/rancher/
+   60  cat /var/lib/rancher/k3s/node-token
+   61  sudo cat  /var/lib/rancher/k3s/node-token
+   62  cd /var/lib/rancher/k3s/
+   63  ls
+   64  cd server/
+   65  sudo cd server/
+   66  sudo su -
+   67  history
+
+
+
+
+
+
+
+
+
+root@final-1:~# history
+
+    1  cd /var/lib/rancher/k3s/server/
+    2  ls
+    3  cat node-token
+    4  systemctl status k3s.service
+    5  vim /etc/rancher/k3s/config.yaml
+    6  sudo systemctl restart k3s.service
+    7  history
